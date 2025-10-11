@@ -33,7 +33,7 @@
 - 2025.10.11: This repo is created.
 
 ### :wrench: TODO
-- [] Relase our constructed old-photo face dataset, VintageFace.
-- [] Relase checkpoint and script for old photo face restoration.
-- [] Relase codes and config files.
-- [] Relase paper on arxiv.
+- [ ] Relase our constructed old-photo face dataset, VintageFace.
+- [ ] Relase checkpoint and script for old photo face restoration.
+- [ ] Relase codes and config files.
+- [ ] Release paper on arxiv.
