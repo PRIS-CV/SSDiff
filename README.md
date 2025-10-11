@@ -10,8 +10,8 @@
     <a href='https://zhanyuma.cn/index.html' target='_blank'>Zhanyu Ma</a><sup>1</sup>
 </div>
 <div>
-    <sup>1</sup>BUPT&emsp; 
-    <sup>2</sup>NJUST&emsp; 
+    <sup>1</sup>Beijing University of Posts and Telecommunications&emsp; 
+    <sup>2</sup>Nanjing University of Science and Technology&emsp; 
 </div>
 
 <div>
