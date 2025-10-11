@@ -20,7 +20,7 @@
 
 <div>
     <h4 align="center">
-        • <a href="" target='_blank'>[Project]</a>  &emsp <a href="" target='_blank'>[arXiv]</a> </a>  &emsp  <a href="" target='_blank'>[Appendix]</a>•
+        • <a href="" target='_blank'>[Project]</a>  &emsp; <a href="" target='_blank'>[arXiv]</a> </a>  &emsp;  <a href="" target='_blank'>[Appendix]</a>•
     </h4>
 </div>
 
