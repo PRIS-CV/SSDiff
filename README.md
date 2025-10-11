@@ -26,6 +26,9 @@
 
 <!-- <img src="assets/teaser.png" width="800px"/> -->
 
+---
+</div>
+
 ### :postbox: Update
 - 2025.10.11: This repo is created.
 
