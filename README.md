@@ -37,3 +37,4 @@
 - [x] Relase checkpoint and script for old photo face restoration.
 - [x] Relase codes and config files.
 - [x] Relase paper on arxiv.
+- <li><span style="color: green;">✔</span> Release paper on arxiv</li>
