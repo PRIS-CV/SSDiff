@@ -6,7 +6,7 @@
     <a href='https://24wenjie-li.github.io/' target='_blank'>Wenjie Li</a><sup>1</sup>&emsp;
     <a href='https://openreview.net/profile?id=~Xiangyi_Wang2' target='_blank'>Xiangyi Wang</a><sup>1</sup>&emsp;
     <a href='https://gh-home.github.io/' target='_blank'>Heng Guo</a><sup>1</sup>&emsp;
-    <a href='https://guangweigao.github.io/' target='_blank'>Guangwei Gao</a><sup>2</sup>
+    <a href='https://guangweigao.github.io/' target='_blank'>Guangwei Gao</a><sup>2</sup>&emsp;
     <a href='https://zhanyuma.cn/index.html' target='_blank'>Zhanyu Ma</a><sup>1</sup>
 </div>
 <div>
@@ -20,7 +20,7 @@
 
 <div>
     <h4 align="center">
-        • <a href="" target='_blank'>[Project]</a>  <a href="" target='_blank'>[arXiv]</a> </a>  <a href="" target='_blank'>[Appendix]</a>•
+        • <a href="" target='_blank'>[Project]</a>  &emsp <a href="" target='_blank'>[arXiv]</a> </a>  &emsp  <a href="" target='_blank'>[Appendix]</a>•
     </h4>
 </div>
 
