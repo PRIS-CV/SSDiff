@@ -20,7 +20,7 @@
 
 <div>
     <h4 align="center">
-        • [<a href="https://24wenjie-li.github.io/projects/SSDiff/" target='_blank'>Project</a>]  &emsp; [<a href="" target='_blank'>arXiv</a>]  &emsp;  [<a href="" target='_blank'>Appendix</a>]•
+        • [<a href="https://24wenjie-li.github.io/projects/SSDiff/" target='_blank'>Project</a>]  &emsp; [<a href="https://arxiv.org/pdf/2510.12114" target='_blank'>arXiv</a>]  &emsp;  [<a href="" target='_blank'>Appendix</a>]•
     </h4>
 </div>
 
@@ -36,4 +36,4 @@
 - [ ] Relase our constructed old-photo face dataset, VintageFace.
 - [ ] Relase checkpoint and script for old photo face restoration.
 - [ ] Relase codes and config files.
-- [ ] Release paper on arxiv.
+- [x] Release paper on arxiv.
