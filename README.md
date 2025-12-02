@@ -83,7 +83,9 @@ python scripts/download_pretrained_models.py CodeFormer
 ```
 
 #### Download VintageFace Test dataset:
+```
 Coming soon!
+```
 
 #### Prepare Testing Data:
 You can put the testing images in the `inputs/TestWhole` folder. If you would like to test on cropped and aligned faces, you can put them in the `inputs/cropped_faces` folder. You can get the cropped and aligned faces by running the following command:
