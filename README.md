@@ -26,7 +26,7 @@
 
 <!-- <img src="assets/teaser.png" width="800px"/> -->
 <img src="assets/network.png" width="800px"/>
-:star: If SSDiff is helpful to your images or projects, please help star this repo. Thanks! :hugs: 
+:star: If SSDiff is helpful to your paper or project, please consider star this repo or cite our paper. Thanks! :hugs: 
 
 ---
 </div>
