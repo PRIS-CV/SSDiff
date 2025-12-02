@@ -88,23 +88,24 @@ You can put the testing images in the `inputs/TestWhole` folder. If you would li
 python extract_faces.py -i [input folder] -o [output folder]
 ```
 
-- If scratches exist, a folder for mask(s) `mask_dir` must be specified with the name of each mask image corresponding to that of each input image. Each input mask shoud be a binary map with white pixels representing masked regions. *To obtain a scratch map, we recommend using [scratch detection model](https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life#2-scratch-detection). One may also further adjust the scratch map with an image editing app (e.g., Photoshop).*
+- If scratches exist, a folder for mask(s) `mask_dir` must be specified with the name of each mask image corresponding to that of each input image. Each input mask shoud be a binary map with white pixels representing masked regions. *To obtain a scratch map automatically, we recommend using the [scratch detection model](https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life#2-scratch-detection). One may also further adjust the scratch map with an image editing app (e.g., Photoshop).*
 
 #### Testing:
 🧑🏻 Old-Photo Face Restoration (cropped and aligned face)
 ```
-# For generating reference pseudo-labeled faces (512x512)
+# For generating reference pseudo-labelled faces (512x512)
 python inference_fake_label.py --task old_photo_restoration --in_dir [input_image_path]  --mask_dir [mask_path] --out_dir [output_image_path] --guidance_scale 0.001 --seed 4321
 ```
 
 ```
 # For breakage, fading, and blur faces (512x512)
-python inference_codeformer.py -w 0.5 --has_aligned --input_path [image folder]|[image path]
+# --self_dir refers to the path of the pseudo-labelled faces generated in the previous stage.
+python inference_final.py --task old_photo_restoration --in_dir [input_image_path]  --mask_dir [mask_path] --out_dir [output_image_path] --guidance_scale 0.0035 --seed 4321 --self_dir [pseudo_labelled_faces_path]
 ```
 
 🧑🏻 Face Restoration (cropped and aligned face)
 ```
-# For only blur faces (512x512)
+# For only blur faces (512x512), You may choose not to use pseudo-labelled faces.
 python inference_final.py --task restoration --in_dir [input_image_path] --out_dir [output_image_path] --guidance_scale 0.05
 ```
 
