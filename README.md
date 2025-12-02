@@ -78,7 +78,25 @@ Download the pretrained restore model `codeformer.pth` and pretrained VQGAN mode
 python scripts/download_pretrained_models.py CodeFormer
 ```
 
+#### Prepare Testing Data:
+You can put the testing images in the `inputs/TestWhole` folder. If you would like to test on cropped and aligned faces, you can put them in the `inputs/cropped_faces` folder. You can get the cropped and aligned faces by running the following command:
+```
+# you may need to install dlib via: conda install -c conda-forge dlib
+python extract_faces.py -i [input folder] -o [output folder]
+```
 
+#### Testing:
+🧑🏻 Old-Photo Face Restoration (cropped and aligned face)
+```
+# For breakage, fading, and blur faces (512x512)
+python inference_codeformer.py -w 0.5 --has_aligned --input_path [image folder]|[image path]
+```
+
+🧑🏻 Face Restoration (cropped and aligned face)
+```
+# For only blur faces (512x512)
+python inference_final.py --task restoration --in_dir [input_image_path] --out_dir [output_image_path] --guidance_scale 0.05
+```
 
 ### Citation
 If our work is useful for your research, please consider citing:
