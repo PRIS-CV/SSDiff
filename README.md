@@ -88,7 +88,7 @@ You can put the testing images in the `inputs/TestWhole` folder. If you would li
 python extract_faces.py -i [input folder] -o [output folder]
 ```
 
-- If scratches exist, a folder for mask(s) `mask_dir` must be specified with the name of each mask image corresponding to that of each input image. Each input mask shoud be a binary map with white pixels representing masked regions. *To obtain a scratch map automatically, we recommend using the [scratch detection model](https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life#2-scratch-detection). One may also further adjust the scratch map with an image editing app (e.g., Photoshop).*
+- If scratches exist, a folder for mask(s) `mask_dir` must be specified with the name of each mask image corresponding to that of each input image. Each input mask shoud be a binary map with white pixels representing masked regions. *To obtain a scratch map, we recommend using [scratch detection model](https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life#2-scratch-detection). One may also further adjust the scratch map with an image editing app (e.g., Photoshop).*
 
 #### Testing:
 🧑🏻 Old-Photo Face Restoration (cropped and aligned face)
