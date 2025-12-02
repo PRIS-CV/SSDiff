@@ -33,7 +33,55 @@
 - 2025.10.11: This repo is created.
 
 ### :wrench: TODO
+- [ ] Relase restoration results.
 - [ ] Relase our constructed old-photo face dataset, VintageFace.
-- [ ] Relase checkpoint and script for old photo face restoration.
-- [ ] Relase codes and config files.
+- [x] Relase checkpoint and script for old photo face restoration.
+- [x] Relase codes and config files.
 - [x] Release paper on arxiv.
+
+
+### Dependencies and Installation
+
+- Pytorch >= 1.7.1
+- CUDA >= 10.1
+- Other required packages in `requirements.txt`
+```
+# git clone this repository
+git clone https://github.com/PRIS-CV/SSDiff
+cd SSDiff
+
+# create new anaconda env
+conda create -n SSDiff python=3.8 -y
+conda activate SSDiff
+
+# install python dependencies
+conda install mpi4py
+pip3 install -r requirements.txt
+pip install -e .
+```
+<!-- conda install -c conda-forge dlib -->
+
+
+### Quick Inference
+
+#### Download Pre-trained Models:
+Download the facelib and dlib pretrained models from [[Releases](https://github.com/sczhou/CodeFormer/releases/tag/v0.1.0) | [Google Drive](https://drive.google.com/drive/folders/1b_3qwrzY_kTQh0-SnBoGBgOrJ_PLZSKm?usp=sharing) | [OneDrive](https://entuedu-my.sharepoint.com/:f:/g/personal/s200094_e_ntu_edu_sg/EvDxR7FcAbZMp_MA9ouq7aQB8XTppMb3-T0uGZ_2anI2mg?e=DXsJFo)] to the `weights/facelib` folder. You can manually download the pretrained models OR download by running the following command:
+```
+python scripts/download_pretrained_models.py facelib
+python scripts/download_pretrained_models.py dlib (only for dlib face detector)
+```
+
+
+### Citation
+If our work is useful for your research, please consider citing:
+
+    @inproceedings{li2025self,
+        title={Self-Supervised Selective-Guided Diffusion Model for Old-Photo Face Restoration},
+        author={Li, Wenjie and Wang, Xiangyi and Guo, Heng and Gao, Guangwei and Ma, Zhanyu},
+        booktitle={NeurIPs},
+        year={2025}
+    }
+
+
+### Contact
+If you have any questions, please feel free to reach me out at `lewj2408@gmail.com`. 
