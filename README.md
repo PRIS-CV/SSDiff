@@ -65,6 +65,8 @@ pip install -e .
 ### Quick Inference
 
 #### Download Pre-trained Models:
+Download the pretrained face generation diffusion model `iddpm_ffhq512_ema500000.pth` from [[Google Drive]()] to `models` folder, the pretrained face parsing model `resnet34.pt` from [[Google Drive]()] to `models/face_parsing` folder, the pretrained style transfer model `photo_image.pt` from [[Google Drive]()] to `CAP_VSTNet/checkpoints` folder.
+
 Download the facelib and dlib pretrained models from [[Releases](https://github.com/sczhou/CodeFormer/releases/tag/v0.1.0) | [OneDrive](https://entuedu-my.sharepoint.com/:f:/g/personal/s200094_e_ntu_edu_sg/EvDxR7FcAbZMp_MA9ouq7aQB8XTppMb3-T0uGZ_2anI2mg?e=DXsJFo)] to the `weights/facelib` folder and `weights` folder, separately. You can manually download the pretrained models OR download by running the following command:
 ```
 python scripts/download_pretrained_models.py facelib
@@ -75,8 +77,6 @@ Download the pretrained restore model `codeformer.pth` and pretrained VQGAN mode
 ```
 python scripts/download_pretrained_models.py CodeFormer
 ```
-
-Download the pretrained face generation diffusion model `iddpm_ffhq512_ema500000.pth` from [[Google Drive]()] to `models` folder, the pretrained face parsing model `resnet34.pt` from [[Google Drive]()] to `models/face_parsing` folder, the pretrained style transfer model `photo_image.pt` from [[Google Drive]()] to `CAP_VSTNet/checkpoints` folder.
 
 
 
