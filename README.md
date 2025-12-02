@@ -65,11 +65,19 @@ pip install -e .
 ### Quick Inference
 
 #### Download Pre-trained Models:
-Download the facelib and dlib pretrained models from [[Releases](https://github.com/sczhou/CodeFormer/releases/tag/v0.1.0) | [Google Drive](https://drive.google.com/drive/folders/1b_3qwrzY_kTQh0-SnBoGBgOrJ_PLZSKm?usp=sharing) | [OneDrive](https://entuedu-my.sharepoint.com/:f:/g/personal/s200094_e_ntu_edu_sg/EvDxR7FcAbZMp_MA9ouq7aQB8XTppMb3-T0uGZ_2anI2mg?e=DXsJFo)] to the `weights/facelib` folder. You can manually download the pretrained models OR download by running the following command:
+Download the facelib and dlib pretrained models from [[Releases](https://github.com/sczhou/CodeFormer/releases/tag/v0.1.0) | [OneDrive](https://entuedu-my.sharepoint.com/:f:/g/personal/s200094_e_ntu_edu_sg/EvDxR7FcAbZMp_MA9ouq7aQB8XTppMb3-T0uGZ_2anI2mg?e=DXsJFo)] to the `weights/facelib` folder and `weights` folder, separately. You can manually download the pretrained models OR download by running the following command:
 ```
 python scripts/download_pretrained_models.py facelib
 python scripts/download_pretrained_models.py dlib (only for dlib face detector)
 ```
+
+Download the pretrained restore model `codeformer.pth` and pretrained VQGAN model `vqgan_code1024.pth` from [[Releases](https://github.com/sczhou/CodeFormer/releases/tag/v0.1.0) | [OneDrive](https://entuedu-my.sharepoint.com/:f:/g/personal/s200094_e_ntu_edu_sg/EoKFj4wo8cdIn2-TY2IV6CYBhZ0pIG4kUOeHdPR_A5nlbg?e=AO8UN9)] to the `models/restorer` folder and `models/vqgan` folder, separately. You can manually download the pretrained models OR download by running the following command:
+```
+python scripts/download_pretrained_models.py CodeFormer
+```
+
+Download the pretrained face parsing model `resnet34.pt` from [[Google Drive]()] to the `models/face_parsing` folder; Download the pretrained style transfer model `photo_image.pt` from [[Google Drive]()] to the `CAP_VSTNet/checkpoints` folder.
+
 
 
 ### Citation
