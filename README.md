@@ -32,6 +32,8 @@
 </div>
 
 ### :postbox: Update
+- 2025.12.03: Checkpoints and scripts are relased.
+- 2025.12.02: Codes and config files are relased.
 - 2025.10.11: This repo is created.
 
 ### :wrench: TODO
