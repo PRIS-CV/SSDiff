@@ -76,7 +76,7 @@ Download the pretrained restore model `codeformer.pth` and pretrained VQGAN mode
 python scripts/download_pretrained_models.py CodeFormer
 ```
 
-Download the pretrained face parsing model `resnet34.pt` from [[Google Drive]()] to the `models/face_parsing` folder; Download the pretrained style transfer model `photo_image.pt` from [[Google Drive]()] to the `CAP_VSTNet/checkpoints` folder.
+Download the pretrained face parsing model `resnet34.pt` from [[Google Drive]()] to `models/face_parsing` folder, the pretrained style transfer model `photo_image.pt` from [[Google Drive]()] to `CAP_VSTNet/checkpoints` folder.
 
 
 
