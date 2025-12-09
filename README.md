@@ -32,8 +32,9 @@
 </div>
 
 ### :postbox: Update
+- 2025.12.07: Codes are relased.
 - 2025.12.03: Checkpoints and scripts are relased.
-- 2025.12.02: Codes and config files are relased.
+- 2025.12.02: Config files are relased.
 - 2025.10.11: This repo is created.
 
 ### :wrench: TODO
@@ -100,13 +101,13 @@ python extract_faces.py -i [input folder] -o [output folder]
 🧑🏻 Old-Photo Face Restoration (cropped and aligned face)
 ```
 # For generating reference pseudo-labelled faces (512x512)
-python inference_fake_label.py --task old_photo_restoration --in_dir [input_image_path]  --mask_dir [mask_path] --out_dir [output_image_path] --guidance_scale 0.001 --seed 4321
+python inference_fake_label.py --task old_photo_restoration_pseudo --in_dir [input_image_path]  --mask_dir [mask_path] --out_dir [output_image_path] --guidance_scale 0.001 --seed 4321
 ```
 
 ```
 # For breakage, fading, and blur faces (512x512)
 # --self_dir refers to the path of the pseudo-labelled faces generated in the previous stage.
-python inference_final.py --task old_photo_restoration --in_dir [input_image_path]  --mask_dir [mask_path] --out_dir [output_image_path] --guidance_scale 0.0035 --seed 4321 --self_dir [pseudo_labelled_faces_path]
+python inference_final.py --task old_photo_restoration --in_dir [input_image_path]  --mask_dir [mask_path] --out_dir [output_image_path] --guidance_scale 0.0035 --self_dir [pseudo_labelled_faces_path] --seed 4321
 ```
 
 🧑🏻 Face Restoration (cropped and aligned face)

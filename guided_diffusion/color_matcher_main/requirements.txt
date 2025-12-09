@@ -1,0 +1,6 @@
+numpy>=1.21
+imageio
+docutils
+ddt
+matplotlib
+packaging>=24.2

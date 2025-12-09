@@ -1,0 +1,79 @@
+notifications:
+  email: false
+
+language: python            # this works for Linux but is an error on macOS or Windows
+jobs:
+  include:
+    - name: "Python 3.8.0 on Xenial Linux"
+      python: 3.8           # this works for Linux but is ignored on macOS or Windows
+    - name: "Python 3.7.4 on macOS"
+      os: osx
+      osx_image: xcode11.2  # Python 3.7.4 running on macOS 10.14.4
+      language: shell       # 'language: python' is an error on Travis CI macOS
+      before_install:
+        - python3 --version
+    - name: "Python 3.8.0 on Windows"
+      os: windows           # Windows 10.0.17134 N/A Build 17134
+      language: shell       # 'language: python' is an error on Travis CI Windows
+      before_install:
+        - choco install python --version 3.8.0
+        - python -m pip install --upgrade pip
+      env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
+
+# install dependencies
+install:
+  - pip3 install --upgrade pip  # all three OSes agree about 'pip3'
+  - sudo pip3 install -r requirements.txt || pip3 install -r requirements.txt
+  - python3 setup.py install || python setup.py install
+  - pip3 install codecov
+  - pip3 install coveralls
+
+# commands to run tests
+script:
+  # trigger unit tests and code coverage
+  - python3 -m coverage run tests/unit_test.py || python -m coverage run tests/unit_test.py
+
+after_success:
+  - coveralls
+
+before_deploy:
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then
+      pip3 install --upgrade twine;
+      python3 setup.py sdist bdist_wheel;
+      twine upload -r testpypi dist/* -u __token__ -p $TEST_PYPI;
+      pip3 uninstall -y color-matcher;
+      pip3 install -i https://test.pypi.org/simple/ color-matcher;
+    fi
+
+deploy:
+  - provider: pypi
+    user: __token__
+    skip_cleanup: true
+    skip_existing: true
+    distributions: sdist bdist_wheel
+    server: https://upload.pypi.org/legacy/
+    password:
+      secure: qDQL2/aCZWEfrrMxJFrSj36Qwr5IUOyrbNpknguo3GUe2N9w68cMXo8pOTFEf/59tkBlG8B3ZiBz05tr/LpuHaEq6mCICQ/9gsbBpllCHaZWM201n46oE/PZrNvBw4X+MDdMUCgfDcoJoQXTaQo97128Qihli4tYbjkrLvlTD21FgqGyFfVLQsdelXPpJd+mX8tTA6nMeqYMLjiPv8vdgcA5GLp35rsoWTJwKKrGeHcwFnrCfUQHXvBg2hrfTB9kXoLlBd9NGbjQaVFo5L8OXrp5lw91qo1HBnSht7gAaAMr3MSOimWjJMH8ItcY3C+Zzpmv/uY7Y4clmKBaNcN2X3bnLdm8N9SVb5N4K29pWY/yTxZkGXclSJIeu1FrRQG6o9dKoc8MywG+NnuVl03GMkhSROeMzw5nPgYkZwbDUQI7Cw4xXNCOLQML7a0QE1VcwCtO+xNiMmM2q7nwoZeYUcQvcyY4TMKrh/ZROfTnyAeKmvmq6TF4T1sWJFGPxtehm1XZ+Wosb8rP61ijPw+iRE7uWQaVjP+9eBwuzeNEGCA/nOP/F+945vnQKHC2W1Vj/YPdHyb+/2kf/kLV3PjcowyMO0Bm9H8eys/bhICRs/aWMl8XXJyv1mx2Ei4otEE0z0AttmkwVkBc7u5D3Y732aLWGPa4IivWG0p2DFNBhkk=
+    on:
+      condition: $TRAVIS_OS_NAME = linux
+      branches:
+        only:
+          - master
+
+  - provider: releases
+    name: Release $TRAVIS_TAG
+    skip_cleanup: true
+    api_key:
+      secure: I5XrRaUVWRqz6rPxSuO91pv7KZ18vSK9177fwgqPFLjvy/JCMdsU36cH3VOFNaGxdjNYWXadFpK5NJ6PPrOZE77y2LuO1Jzmubt7/kZsYWH8QEIZN53KVDThQx3apKF34f2CuvW19eCv09MtTudeu9nXMD8rTcidfbJZzNcfdFRT05SYXUlB2H1UwzBf12Ki8PDS7e1SfWnXRkMKjFpGx1h6jDaCQlALWxP50r0cObE7xyeCY7aHori+BFt+Y2L+SjyAKFjDq10Ni66jMYxlQz1S3yRIr+xlxqJqkma+Wt37pD8Op6Nzrv/I2+XOg4TX5PxwTUhE0/A6S3Vpkm5F8kneCGX7DyAXcqs5PV6CYFP6vhUxIf9vP9BetdXMiyhvXRXCQFGmPNDrh2MoKXinQfq0P7VuDFMuV85viTMu0D8Xb2cT/INixywLuP2F4nWXfFqSUC0QgqcTXeXZ491mL/cGIJeOWKie5erTlcQ8YfHACSatNOcqZCQZApj0ACzhaJbouQtsaLeSCyVa1Xk90FgiK8aw/pcbcECbh3iHsVLrKv8W8ZD27etzlQe5XtRS/w9kAwzqlmZliFVxHuZ2bEWmfpuiTP6LToXNV/HYE3nUfuRreWHoBvjPtRf5MNsAL7OKvAvpMHyjILclw4+8AHdVrhenKRDM2IO/0D8C4eM=
+    file_glob: true
+    file:
+      - dist/*.whl
+      - dist/*.tar.gz
+      - dist/*.egg
+    draft: true
+    on:
+      repo: hahnec/color-matcher
+      condition: $TRAVIS_OS_NAME = linux
+      branches:
+        only:
+          - master
