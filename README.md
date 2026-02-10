@@ -32,6 +32,7 @@
 </div>
 
 ### :postbox: Update
+- 2025.02.11: Datas are relased.
 - 2025.12.07: Codes are relased.
 - 2025.12.03: Checkpoints and scripts are relased.
 - 2025.12.02: Config files are relased.
@@ -39,7 +40,7 @@
 
 ### :wrench: TODO
 - [ ] Relase restoration results.
-- [ ] Relase our constructed old-photo face dataset, VintageFace.
+- [x] Relase our constructed old-photo face dataset, VintageFace.
 - [x] Relase checkpoint and script for old photo face restoration.
 - [x] Relase codes and config files.
 - [x] Release paper on arxiv.
@@ -84,9 +85,7 @@ python scripts/download_pretrained_models.py CodeFormer
 ```
 
 #### Download VintageFace Test dataset:
-```
-Coming soon!
-```
+Download the real-world old face photo test set that collected from the Internet called `VintageFace` from [[Google Drive](https://drive.google.com/file/d/1D-2_0fHxtGs6jA32EdtZ2tFdGi3774im/view?usp=drive_link)], including old face photos with their corresponding processed masks.
 
 #### Prepare Testing Data:
 You can put the testing images in the `inputs/TestWhole` folder. If you would like to test on cropped and aligned faces, you can put them in the `inputs/cropped_faces` folder. You can get the cropped and aligned faces by running the following command:
