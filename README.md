@@ -39,7 +39,7 @@
 - 2025.10.11: This repo is created.
 
 ### :wrench: TODO
-- [ ] Relase restoration results.
+- [x] Relase restoration results.
 - [x] Relase our constructed old-photo face dataset, VintageFace.
 - [x] Relase checkpoint and script for old photo face restoration.
 - [x] Relase codes and config files.
@@ -95,6 +95,9 @@ python extract_faces.py -i [input folder] -o [output folder]
 ```
 
 - If scratches exist, a folder for mask(s) `mask_dir` must be specified with the name of each mask image corresponding to that of each input image. Each input mask shoud be a binary map with white pixels representing masked regions. *To obtain a scratch map automatically, we recommend using the [scratch detection model](https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life#2-scratch-detection). One may also further adjust the scratch map with an image editing app (e.g., Photoshop).*
+
+#### Visual results:
+You can download visual results from [Google Drive](https://drive.google.com/file/d/1XNNs7SbJNlQy__sLt9BKKaDlxs3q0HFh/view?usp=drive_link).
 
 #### Testing:
 🧑🏻 Old-Photo Face Restoration (cropped and aligned face)
